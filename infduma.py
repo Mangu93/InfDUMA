@@ -16,18 +16,18 @@ bot = telebot.TeleBot(TOKEN) # Creamos el objeto de nuestro bot.
 #############################################
 #Listener
 def listener(messages): # Con esto, estamos definiendo una función llamada 'listener', que recibe como parámetro un dato llamado 'messages'.
-    for m in messages: # Por cada dato 'm' en el dato 'messages'
-        cid = m.chat.id # Almacenaremos el ID de la conversación.
-        if m.content_type == 'text':
-            print "[" + str(cid) + "]: " + m.text # Y haremos que imprima algo parecido a esto -> [52033876]: /start
+	for m in messages: # Por cada dato 'm' en el dato 'messages'
+		cid = m.chat.id # Almacenaremos el ID de la conversación.
+		if m.content_type == 'text':
+			print "[" + str(cid) + "]: " + m.text # Y haremos que imprima algo parecido a esto -> [52033876]: /start
  
 bot.set_update_listener(listener) # Así, le decimos al bot que utilice como función escuchadora nuestra función 'listener' declarada arriba.
 #############################################
 #Funciones
 @bot.message_handler(commands=['ayuda']) 
 def command_ayuda(m): 
-    cid = m.chat.id 
-    bot.send_message( cid, "Comandos Disponibles: /ayuda, /informacion, /notadecorte, /grados, /salidas, /menciones, /informatica, /software, /computadores, /salud, /masters, /asignaturas")
+	cid = m.chat.id 
+	bot.send_message( cid, "Comandos Disponibles: /ayuda, /informacion, /notadecorte, /grados, /salidas, /menciones, /informatica, /software, /computadores, /salud, /masters, /asignaturas")
 
 @bot.message_handler(commands=['salidas'])
 def command_salidas(m):
@@ -85,14 +85,14 @@ def command_ping(m):
 
 @bot.message_handler(commands=['informatica'])
 def command_temp(m):
-    cid = m.chat.id
-    informatica = 'En rasgos generales, el grado está enfocado a prepararte para poder desarrollar sistemas informáticos, gestionar la seguridad de sistemas, aplicaciones de todo tipo y gestionar proyectos de todo tipo. Luego con las menciones te especializas mas en una parte.Mas información sobre las menciones de Informática usando el comando /menciones'
-    bot.send_message(cid, informatica)
+	cid = m.chat.id
+	informatica = 'En rasgos generales, el grado está enfocado a prepararte para poder desarrollar sistemas informáticos, gestionar la seguridad de sistemas, aplicaciones de todo tipo y gestionar proyectos de todo tipo. Luego con las menciones te especializas mas en una parte.Mas información sobre las menciones de Informática usando el comando /menciones'
+	bot.send_message(cid, informatica)
 @bot.message_handler(commands=['software'])
 def command_temp(m):
-    cid = m.chat.id
+	cid = m.chat.id
 	software = 'Este grado está enfocado tanto a la creación como mantenimiento y pruebas de cualquier software. Junto a las bases necesarias para la obtención de requisitos (que quiere y que necesita el cliente), principios de modelado tanto conceptual como prácticos enfocados al software. También se manejan bases de datos, se le da gran importancia a calidad del código y la necesidad de unas interfaces amigables y de calidad. '
-    bot.send_message(cid, software)
+	bot.send_message(cid, software)
 @bot.message_handler(commands=['computadores'])
 def command_nmap(m):
 	cid = m.chat.id
@@ -100,9 +100,9 @@ def command_nmap(m):
 	bot.send_message(cid,computadores)
 @bot.message_handler(commands=['salud'])
 def command_espacio(m):
-    cid = m.chat.id
-    salud = 'Este grado está diseñado para que las personas que realicen este grado tengan conocimientos suficientes para poder hacer como una especie de traductores entre los profesionales del mundo de la medicina, biología, etc. y los profesionales del mundo de la tecnología y también para ejercer como estos últimos.'
-    bot.send_message(cid, salud)
+	cid = m.chat.id
+	salud = 'Este grado está diseñado para que las personas que realicen este grado tengan conocimientos suficientes para poder hacer como una especie de traductores entre los profesionales del mundo de la medicina, biología, etc. y los profesionales del mundo de la tecnología y también para ejercer como estos últimos.'
+	bot.send_message(cid, salud)
 #############################################
 #Peticiones
 bot.polling(none_stop=True) # Con esto, le decimos al bot que siga funcionando incluso si encuentra algun fallo.
