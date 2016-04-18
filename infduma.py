@@ -36,7 +36,7 @@ def command_salidas(m):
 	bot.send_message(cid, salidas)
 @bot.message_handler(commands=['informacion'])
 def command_informacion(m):
-	cid = m.chat.id(m):
+	cid = m.chat.id
 	info = 'Bot programado para la Jornada de Puertas Abiertas 2016 por Adrián Marín Portillo (Github: Mangu93)'
 	bot.send_message(cid, info)
 
